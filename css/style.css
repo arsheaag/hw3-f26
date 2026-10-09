@@ -68,7 +68,7 @@ nav a:focus {
     width: 100%;
     height: auto;
 }
-/* added for loans image*/
+/* added for loans image */
 .loans-image {
      height: 100%;
  }
@@ -173,10 +173,22 @@ nav a:focus {
      grid-column: 3 / span 5;
      }
 
+     /* added */
+     /* Restore normal loans image sizing on desktop */
+     .loans-image {
+          height: auto;
+     }
+     
+     .loans-image img {
+          height: auto;
+          object-fit: initial;
+     }
+
 
  /* Step 16:Write the selector/rule property to update the .text-block class */
  .text-block {
      max-height: 235px;
      overflow: auto;
+     box-sizing: content-box;
  }
 }
