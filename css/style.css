@@ -28,7 +28,7 @@ nav a:focus {
 /*Write selector/rule property to style the container */
 .container {
      display: grid;
-     grid-template-columns: repeat(5, 1fr);
+     grid-template-columns: repeat(5, minmax(0, 1fr));
      gap: 13px;
  }
 
@@ -56,6 +56,28 @@ nav a:focus {
     max-height: 675px;
     overflow: hidden;
 }
+
+
+/* added , Make the actual images fit properly */
+.accounts-image img,
+.onlinebanking-image img,
+.security-image img,
+.loans-image img,
+.contact-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* added for loans image*/
+.loans-image {
+     height: 100%;
+ }
+ 
+ .loans-image img {
+     height: 100%;
+     object-fit: cover;
+ }
+
 
 /* Position all five text sections */
 .accounts,
@@ -99,6 +121,8 @@ nav a:focus {
      justify-self: center;
      text-align: center;
      z-index: 1;
+     box-sizing: border-box;
+     min-width: 0;
  }
  
  .text-block ul {
@@ -119,7 +143,7 @@ nav a:focus {
  
   /* Step 11: Write the selector/rule property to update the .container class */
   .container {
-     grid-template-columns: repeat(7, 1fr);
+     grid-template-columns: repeat(7, minmax(0, 1fr));
      }
 
   /* Steps 12 - 15: Update the grid-column property of the grid's children (where-needed)*/
